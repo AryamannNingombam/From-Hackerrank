@@ -1,0 +1,12 @@
+def solve(s):
+    listi = list(s.split(' '))
+    k = []
+    for i in listi:
+        if i.isalpha() == True:
+            i = i.capitalize()
+            k.append(i)
+        else:
+            k.append(i)
+    
+    return ' '.join(k)
+    
