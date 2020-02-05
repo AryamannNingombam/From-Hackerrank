@@ -4,19 +4,32 @@ numbershoes = int(input())
 
 shoesize = input()
 availshoes = list(shoesize.split(" "))
+availshoesnumber = dict(Counter(availshoes))
 
 numberofcust = int(input())
-
-
-shoedemand =dict([ map(str,input().split(' ')) for x in range(numberofcust)])
 total = 0
-for i in shoedemand.keys():
-    for j in availshoes:
-        if i == j:
-            total += int(shoedemand[i])
+demand = []
+for i in range(numberofcust):
+    number = input()
+    k = list(number.split(' '))
+    demand.append(k)
 
+for i in demand:
+    for j in availshoesnumber.keys():
+        if i[0] == j and availshoesnumber[j]!= 0:
+            
+            total += int(i[1])
+            availshoesnumber[j]  = availshoesnumber[j] - 1
         else:
             pass
 
 
+
+
+
 print(total)
+
+
+    
+
+
