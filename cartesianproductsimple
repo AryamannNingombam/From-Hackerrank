@@ -1,0 +1,12 @@
+first = input()
+
+firstlist = list(first.split(' '))
+
+second = input()
+
+secondlist = list(second.split(' '))
+
+for i in firstlist:
+    for j in secondlist:
+        print('(',i,',',' ',j,')',sep='',end=' ')
+        
