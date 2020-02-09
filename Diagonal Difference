@@ -1,0 +1,12 @@
+def diagonalDifference(arr):
+    k ,l = 0,0
+    
+    for i in range(len(arr)):
+        k += arr[i][i] 
+        l += arr[i][len(arr)-i-1]
+    
+     
+    
+    return abs(k-l)
+
+#### You need to take and array inside the array
