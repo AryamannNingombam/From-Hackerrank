@@ -1,0 +1,10 @@
+
+n1 = int(input())
+
+k  = set(input().split(' '))
+
+n2 = int(input())
+
+k2 = set(input().split(' '))
+
+print(len(k.union(k2)))
