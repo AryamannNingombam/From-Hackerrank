@@ -1,0 +1,6 @@
+def miniMaxSum(arr):
+    
+    arr = set(sorted(arr))
+    print(sum(arr[:len(arr)-1]),sum(arr[1:]))  
+    
+    
