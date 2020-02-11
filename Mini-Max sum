@@ -4,3 +4,7 @@ def miniMaxSum(arr):
     print(sum(arr[:len(arr)-1]),sum(arr[1:]))  
     
     
+    #The numbers should be distinct as it may not work
+    #This project was given for only 5 numbers and it might not work for more.
+    
+    
