@@ -1,0 +1,27 @@
+
+from collections import *
+
+n = int(input())
+dicti = OrderedDict()
+
+for i in range(n):
+    lmn = input().split()
+    z = lmn
+    
+    k =' '.join(lmn[:len(lmn)-1])
+    
+    if k in dicti.keys():
+        zlm = int(dicti[k]) + int(z[-1])
+        dicti[' '.join(lmn[:len(lmn)-1])] = zlm
+
+    else:
+        dicti[' '.join(lmn[:len(lmn)-1])] = z[-1]
+
+for i,j in dicti.items():
+    print(i,j)
+
+    
+
+
+
+
