@@ -1,0 +1,11 @@
+# Enter your code here. Read input from STDIN. Print output to STDOUT
+from itertools import *
+k = input()
+
+lmj = []
+for i,j in groupby(k):
+    
+    lmj.append(list(j))
+    
+for i in lmj:
+    print(f'({len(i)}, {i[0]})',end = ' ')
