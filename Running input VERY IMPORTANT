@@ -1,0 +1,9 @@
+var,value = input().split()
+poly = list(input())
+
+for i in poly:
+    if i == 'x':
+        poly[poly.index('x')] = str(var)
+poly = ''.join(poly)        
+
+print(int(eval(poly)) == int(value))
