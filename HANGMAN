@@ -1,0 +1,27 @@
+from more_itertools import *
+from random import *
+
+k = choice(['hello','aryamann','baby','tumse'])
+
+klist = ['_' for i in k]
+
+turns = 10
+
+while turns != 0:
+    inp = input('Enter Input')
+    j = list(locate(k,lambda x: x == inp))
+    for i in j:
+        klist[i] = inp
+    if '_' not in klist:
+        print("YOU WON!!")
+        break
+    else:
+        for i in klist:
+            print(i,end  = '\n')
+
+        turns -= 1
+        print("Number of turns left " + str(turns))
+else:
+    print('you lost')
+
+
