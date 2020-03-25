@@ -1,13 +1,103 @@
 from more_itertools import *
 from random import *
 
-k = choice(['hello','aryamann','baby','tumse'])
+
+
+
+choices = [  # final state: head, torso, both arms, and both legs
+               '', r"""
+                   --------
+                   |      |
+                   |      O
+                   |     \|/
+                   |      |
+                   |     / \
+                   -
+                """,
+                # head, torso, both arms, and one leg
+                r"""
+                   --------
+                   |      |
+                   |      O
+                   |     \|/
+                   |      |
+                   |     / 
+                   -
+                """,
+                # head, torso, and both arms
+                r"""
+                   --------
+                   |      |
+                   |      O
+                   |     \|/
+                   |      |
+                   |      
+                   -
+                """,
+                # head, torso, and one arm
+               r"""
+                   --------
+                   |      |
+                   |      O
+                   |     \|
+                   |      |
+                   |     
+                   -
+                """,
+                # head and torso
+                """
+                   --------
+                   |      |
+                   |      O
+                   |      |
+                   |      |
+                   |     
+                   -
+                """,
+                # head
+                """
+                   --------
+                   |      |
+                   |      O
+                   |    
+                   |      
+                   |     
+                   -
+                """,
+                # initial empty state
+                """
+                   --------
+                   |      |
+                   |      
+                   |    
+                   |      
+                   |     
+                   -
+                """
+    ]
+           
+           
+           
+           
+           
+           
+           
+
+
+with open('C:\\Users\\Personal\\PycharmProjects\\Hangmanwords.txt') as e:
+    global k
+    k = random.choice([i for  i in e.read().split()])
+
+
+
+
 
 klist = ['_' for i in k]
 
-turns = 10
 
-while turns != 0:
+lmn = choices[len(choices)-1]
+while lmn != choices[0]:
+
     inp = input('Enter Input')
     j = list(locate(k,lambda x: x == inp))
     for i in j:
@@ -17,11 +107,13 @@ while turns != 0:
         break
     else:
         for i in klist:
-            print(i,end  = '\n')
+            print(i,end  = '')
+        print(lmn)
+        lmn = choices[choices.index(lmn)-1]
 
-        turns -= 1
-        print("Number of turns left " + str(turns))
+
+
+
 else:
     print('you lost')
-
-
+    print(f'the word was {k}')
